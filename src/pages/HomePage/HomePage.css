@@ -1,0 +1,26 @@
+.Home-title {
+    font-size: 4vh;
+    background-image: url("../../images/singup.jpg");
+}
+
+.Home-h1 {
+    display: flex;
+    justify-content: center;  
+}
+
+.Home-images {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer {
+    font-size: 20px;
+    height: 80px;
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

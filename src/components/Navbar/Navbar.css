@@ -1,3 +1,25 @@
 .nav-setup {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 2px solid darkgray;
+    height: 7vh;
+}
+
+.Nav-color {
+ width: 110px;   
+ background-color: black;
+ color: white;
+ margin-right: 1vw;
+ margin-left: 4vw;
+ border-radius: 4px;
+ font-size: 2.3vh;
+}
+ 
+.Snapit-logo {
+    display: flex;
+    align-items: center;
+}
+.Snapi_logos {
+    margin-right: 51vw;
 }

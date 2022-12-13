@@ -47,30 +47,31 @@ function SignupPage() {
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
+      
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+      <form onSubmit={handleSignupSubmit} className="form-flex">
+            <h1>Sign Up</h1>
+            <label>Email:</label>
+            <input type="email" name="email" value={email} onChange={handleEmail} />
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+            />
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+            <label>Name:</label>
+            <input type="text" name="name" value={name} onChange={handleName} />
 
-        <button type="submit">Sign Up</button>
-      </form>
+            <button type="submit" className="singup-button">Sign Up</button>  
+        </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+        <p className="login-parag-color">Already have account?</p>
+        <Link to={"/login"} className="login-link-color"> Login</Link>
     </div>
   );
 }

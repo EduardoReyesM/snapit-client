@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
+import img3 from "../../images/logo-back.png"
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
@@ -10,12 +11,21 @@ function Navbar() {
  const Location = useLocation();
  console.log(Location)
 
+ const {pathname} = Location;
+
   return (
+    
     <nav className="nav-setup">
+      <div className="Snapi_logos">
+            <div className="Snapit-logo">
+                <h3 className="Snapit-color">SNAPIT</h3>
+                <img src={img3} width="50px" />
+            </div>
+           </div> 
       {
         Location?.pathname != "/" && (
         <Link to="/">
-        <button>Home</button>
+        <button className="Nav-color">Home</button>
       </Link>
 )
       }
@@ -23,10 +33,10 @@ function Navbar() {
 
       {isLoggedIn && (
         <>
-          <button onClick={logOutUser}>Logout</button>
+          <button onClick={logOutUser} className="Nav-color">Logout</button>
 
           <Link to="/profile">
-            <button>Profile</button>
+            <button className="Nav-color">Profile</button>
             {/* <img src="https://picsum.photos/id/402/200/300" style={{ width: 50, height: 50, borderRadius: 25}} alt="profile" /> */}
           </Link>
 
@@ -36,18 +46,30 @@ function Navbar() {
 
       {!isLoggedIn && (
         <>
+          {
+          pathname != "/explore" && (
           <Link to="/explore">
+          {" "}
+          <button className="Nav-color" >Explore</button>{" "}
+        </Link>) 
+          }
+          {
+            pathname != "/signup" && (
+            <Link to="/signup">
             {" "}
-            <button >Explore</button>{" "}
-          </Link>
-          <Link to="/signup">
+            <button className="Nav-color">Sign Up</button>{" "}
+            </Link>
+            )
+          }
+          {
+            (pathname != "/login" || pathname !="" ) && (
+            <Link to="/login">
             {" "}
-            <button >Sign Up</button>{" "}
-          </Link>
-          <Link to="/login">
-            {" "}
-            <button >Login</button>{" "}
-          </Link>
+            <button className="Nav-color">Login</button>{" "}
+            </Link>
+            )
+          }
+          
         </>
       )}
     </nav>

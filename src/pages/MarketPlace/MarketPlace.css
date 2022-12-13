@@ -1,0 +1,44 @@
+.MarketP {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 93vh;
+}
+
+.market-title {
+    color: white;
+    font-size: 55px;
+    text-shadow: 5px 5px 15px white ;
+}
+.market-box-elements {
+    color: black;
+    background-color: white;
+    border-radius: 6px;
+    width: 190px;
+    height: 210px;
+    box-shadow: 10px 5px 15px red;
+    margin-top: 35px;
+}
+.markets-box-one {
+    display: flex;
+    gap: 15vw;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.Sell-items-market a {
+    font-size: 37px;
+    text-decoration: none;
+    background-color: #fff;
+    width: 170px; 
+    height: 40px;
+    border-radius: 9px;
+    color: rgb(251, 5, 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    box-shadow: 0px 3px 25px #dc230b;
+    text-shadow: 0px 3px 5px white;
+}

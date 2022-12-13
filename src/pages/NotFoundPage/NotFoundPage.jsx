@@ -1,11 +1,14 @@
 import "./NotFoundPage.css";
+import { Button, Result } from 'antd';
 
 function NotFoundPage() {
   return (
-    <div>
-      <h1>Page Not Found</h1>
-      <p>This page doesn't seem to exist</p>
-    </div>
+  <Result className="Result-NotF"
+    status="404"
+    title="404"
+    subTitle="Sorry, the page you visited does not exist."
+    extra={<Button path="/" type="primary">Back Home</Button>}
+  />
   );
 }
 

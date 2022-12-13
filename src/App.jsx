@@ -11,13 +11,17 @@ import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
+import EventsPage from "./pages/EventsPage/EventsPage";
+import MarketPlace from "./pages/MarketPlace/MarketPlace"
+import Seller from "./pages/SellerPage/Seller";
+import Newevent from "./pages/NewEvent/NewEvent"
+
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-
-      <Routes>
+        <Routes>
         <Route path="/" element={<HomePage />} />
 
         <Route
@@ -50,6 +54,22 @@ function App() {
         <Route 
         path="/explore" 
         element = {<ExplorePage />} />
+
+        <Route 
+        path="/events" 
+        element={<EventsPage />} />
+
+        <Route
+        path="/marketplace"
+        element={<MarketPlace />} />
+
+        <Route
+        path="/sellonline"
+        element={<Seller />} />
+
+        <Route
+        path="/newevent"
+        element={<Newevent />} />
         
       </Routes>
 

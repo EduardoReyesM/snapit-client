@@ -46,9 +46,10 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
+      
 
-      <form onSubmit={handleLoginSubmit}>
+      <form onSubmit={handleLoginSubmit} className="login-form-flex">
+      <h1>Login</h1>
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
 
@@ -60,12 +61,12 @@ function LoginPage() {
           onChange={handlePassword}
         />
 
-        <button type="submit">Login</button>
+        <button type="submit" className="login-button">Login</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <p className="Parag-color-login">Don't have an account yet?</p>
+      <Link to={"/signup"} className="send-too-SP"> Sign Up</Link>
     </div>
   );
 }
