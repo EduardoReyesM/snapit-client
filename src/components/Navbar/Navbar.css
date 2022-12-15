@@ -23,3 +23,13 @@
 .Snapi_logos {
     margin-right: 51vw;
 }
+.nabvar-span-user {
+    margin-right: 5px;
+    background-color: brown;
+    border-radius: 5px;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    width:70px;
+    color:aliceblue
+}

@@ -13,7 +13,7 @@ const Seller = () => {
                     <input className='input-group' type="text" required></input>
                     <span class="highlight-group"></span>
                     <span class="bar-group"></span>
-                    <label>Product Name</label>
+                    <label className='seller-label-goup'>Product Name</label>
                     </div>
 
                     <div class="seller-group">      
@@ -24,7 +24,7 @@ const Seller = () => {
                     <input className='input-group' type="text" required></input>
                     <span class="highlight-group"></span>
                     <span class="bar-group"></span>
-                    <label>Price</label>
+                    <label className='seller-label-goup'>Price</label>
                     </div>
 
                     <div className='submit-group-seller'>

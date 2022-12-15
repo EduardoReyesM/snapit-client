@@ -1,9 +1,23 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import "./MarketPlace.css"
-import {Link} from "react-router-dom"
+import axios from 'axios'
+
+const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
+
 
 const MarketPlace = () => {
-   
+  const [markets, setMarkets] = useState();
+  //function para tener los events del servidor
+  const getMarkets = () => {
+    axios.get(`${API_URL}/api/marketplace`)
+      .then((response) => {
+      setMarkets(response.data)
+    })
+    .catch((err) => console.log(err))
+  }
+  useEffect(() => {
+     getMarkets()
+  }, [])
   
   return (
     <div className='MarketP'>

@@ -49,8 +49,7 @@ function App() {
             </IsAnon>
           }
         />
-        <Route path="*" element= {<NotFoundPage />} 
-        />
+        
         <Route 
         path="/explore" 
         element = {<ExplorePage />} />
@@ -70,6 +69,7 @@ function App() {
         <Route
         path="/newevent"
         element={<Newevent />} />
+        <Route path="*" element= {<NotFoundPage />} />
         
       </Routes>
 

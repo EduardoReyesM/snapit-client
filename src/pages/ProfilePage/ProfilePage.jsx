@@ -3,10 +3,26 @@ import {Link} from "react-router-dom"
 import trashcan from "../../images/trash-can.png"
 import {useContext} from "react"
 import {AuthContext} from "../../context/auth.context"
+import axios from "axios";
+import {useState, useEffect} from "react"
+
+const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
 
 function ProfilePage() {
     const {user} = useContext(AuthContext);
     console.log(user);
+    const [profiles, setProfiles] = useState();
+  //function para tener los profiles del servidor
+  const getProfile = () => {
+    axios.get(`${API_URL}/api/events`)
+      .then((response) => {
+      setProfiles(response.data)
+    })
+    .catch((err) => console.log(err))
+  }
+  useEffect(() => {
+     getProfile()
+  }, [])
   return (
     // datos del usuario
     <div className="Profile-background-color">

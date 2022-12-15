@@ -43,7 +43,7 @@
   input.input-group:focus 		{ outline:none; }
   
   /* LABEL ======================================= */
-  label 				 {
+  label.seller-label-goup 				 {
     color:#999; 
     font-size:18px;
     font-weight:normal;
@@ -57,7 +57,7 @@
   }
   
   /* active state */
-  input.input-group:focus ~ label, input.input-group:valid ~ label 		{
+  input.input-group:focus ~ label.seller-label-goup, input.input-group:valid ~ label.seller-label-goup 		{
     top:-20px;
     font-size:14px;
     color:#5264AE;

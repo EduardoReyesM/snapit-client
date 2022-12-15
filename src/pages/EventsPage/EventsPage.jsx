@@ -1,22 +1,37 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import "./EventsPage.css"
-import imgE from "../../images/Mcbook.png"
+import axios from 'axios'
 
-const EventsPage = () => {
+const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
+
+  const EventsPage = () => {
+    //listas de events creados
+  const [events, setEvents] = useState();
+  //function para tener los events del servidor
+  const getEvents = () => {
+    axios.get(`${API_URL}/api/events`)
+      .then((response) => {
+      setEvents(response.data)
+    })
+    .catch((err) => console.log(err))
+  }
+  useEffect(() => {
+     getEvents()
+  }, [])
   return (
     <div className='eventsbk-image'>
-        <div className='events-title'>
+          <div className='events-title'>
           <h3>Events Near You</h3>
           <a href='/newevent'><h6>Create New Event</h6></a>
         </div>
         <div className='events-box-elements'>
-            <div className='events-box-one'>
-                <div>
-                  <img src={imgE} alt="img" width="200" />
-                  <p>Description:</p>
-                  <button>Share</button>
-                </div>
-            </div>  
+              <div className='events-box-one'>
+                   <div>
+                      <img src="" alt="img" width="200" />
+                      <p>Description:</p>
+                      <button>Share</button>
+                   </div>
+              </div> 
         </div>
    </div>
   )

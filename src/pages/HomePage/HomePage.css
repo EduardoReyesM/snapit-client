@@ -1,8 +1,7 @@
 .Home-title {
     font-size: 4vh;
-    background-image: url("../../images/singup.jpg");
+    background-image: url("../../images/empty.jpeg");
 }
-
 .Home-h1 {
     display: flex;
     justify-content: center;  
@@ -22,5 +21,4 @@
     border: 1px solid white;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
