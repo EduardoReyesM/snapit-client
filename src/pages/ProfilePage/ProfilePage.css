@@ -28,6 +28,7 @@
     margin-left: 230px;
     margin-top: 10px;
     border-radius: 10px;
+    overflow: auto;
 }
 
 .post-align{
@@ -62,6 +63,7 @@
     flex-direction: column;
     align-items: center;
     box-shadow: 10px 5px 20px black;
+    overflow:visible;
 }
 .link-prof-attach{
     display: flex;

@@ -32,6 +32,12 @@
     position:relative; 
     margin-bottom:45px; 
   }
+  .input-image-event{
+    width: 296px;
+  }
+  .textarea-event{
+    width: 296px;
+  }
   input.input-eventer { 				
     font-size:18px;
     padding:10px 10px 10px 5px;

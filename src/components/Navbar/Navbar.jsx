@@ -22,13 +22,7 @@ function Navbar() {
                 <img src={img3} width="50px" />
             </div>
            </div> 
-      {
-        Location?.pathname != "/" && (
-        <Link to="/">
-        <button className="Nav-color">Home</button>
-      </Link>
-       )
-      }
+     
      
 
       {isLoggedIn && (
@@ -41,11 +35,25 @@ function Navbar() {
           </Link>
           
           <span className="nabvar-span-user">{user && user.name}</span>
+          
+          {Location?.pathname != "/sellonline" && (
+          <Link to="/sellonline"></Link>
+          ) }
+          {Location?.pathname != "/newevent" && (
+          <Link to="/newevent"></Link>
+          ) }
         </>
       )}
 
       {!isLoggedIn && (
         <>
+          {
+        Location?.pathname != "/" && (
+        <Link to="/">
+        <button className="Nav-color">Home</button>
+      </Link>
+       )
+      }
           {
           pathname != "/explore" && (
           <Link to="/explore">
@@ -62,7 +70,7 @@ function Navbar() {
             )
           }
           {
-            (pathname != "/login" /*|| pathname !=""*/ ) && (
+            (pathname != "/login" /*|| pathname !="/" */ ) && (
             <Link to="/login">
             {" "}
             <button className="Nav-color">Login</button>{" "}

@@ -1,5 +1,5 @@
 .MarketP {
-    background-color: black;
+    background-color:#FAF0E6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,18 +7,22 @@
 }
 
 .market-title {
-    color: white;
+    color: black;
     font-size: 55px;
-    text-shadow: 5px 5px 15px white ;
+    text-shadow: 5px 5px 10px rgb(234, 165, 15) ;
 }
 .market-box-elements {
     color: black;
     background-color: white;
     border-radius: 6px;
-    width: 190px;
-    height: 210px;
+    width: 790px;
+    height: 337px;
     box-shadow: 10px 5px 15px red;
-    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    align-items: center;
+    margin-top: 35px; 
 }
 .markets-box-one {
     display: flex;
@@ -41,4 +45,23 @@
     margin-left: 30px;
     box-shadow: 0px 3px 25px #dc230b;
     text-shadow: 0px 3px 5px white;
+}
+.margin-market-t{
+  margin-top: 7px;
+  margin-left: 59px;
+}
+.margin-market-b{
+ margin-bottom: 7px;
+ margin-left: 86px;
+ width: 120px;
+ background-color: #dc230b;
+ color: #FAF0E6;
+ border-radius: 3px;
+}
+.inside-market-box{
+    margin-top: 3px;
+    background-color:rgb(20, 53, 96);
+    border-radius: 20px;
+    width: 300px;
+    color: white;
 }

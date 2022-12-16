@@ -1,5 +1,5 @@
 .eventsbk-image {
-    background-color:teal;
+    background-color:crimson;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,15 +22,33 @@
 .events-title {
     color: white;
     font-size: 35px;
+    text-shadow: 5px 5px 25px black;
 }
 
 .events-box-elements {
     color: white;
     margin-top: 35px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 35px black;
 }
 
 .events-box-one {
-  display: flex;
-  gap: 30vw;
   font-size: 20px;
+  width: 900px;
+  height: 400px;
+  background-color: #ffffff;
+  overflow:auto;
 }
+.cada-evento{
+    background-color:bisque;
+    width: 580px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    margin-left: 18%;
+    border-radius: 6px;
+    box-shadow: 5px 5px 25px lightseagreen;
+}
+

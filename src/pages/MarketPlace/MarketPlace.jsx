@@ -6,10 +6,11 @@ const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
 
 
 const MarketPlace = () => {
-  const [markets, setMarkets] = useState();
+  const [markets, setMarkets] = useState([]);
+  const [product, setProduct] = useState([])
   //function para tener los events del servidor
   const getMarkets = () => {
-    axios.get(`${API_URL}/api/marketplace`)
+    axios.get(`${API_URL}/api/product`)
       .then((response) => {
       setMarkets(response.data)
     })
@@ -18,6 +19,13 @@ const MarketPlace = () => {
   useEffect(() => {
      getMarkets()
   }, [])
+
+  const deleteProduct = async (post) => {
+    try {
+    } catch(err) {
+      console.log(err);
+    } 
+  }
   
   return (
     <div className='MarketP'>
@@ -28,14 +36,19 @@ const MarketPlace = () => {
         <a href='/sellonline'><h6>sell your items</h6></a>
         </div>
         <div className='market-box-elements'>
-            <div className='markets-box-one'>
-              <div>
-                  <img src="" alt="img" width="100" />
-                  <p>$</p>
-                  <p>Description:</p>
-                  <button>Share</button>
+          {markets.map(vender => {
+            return (
+              <div className='markets-box-one'>
+              <div className='inside-market-box'>
+                  <img className='margin-market-t' src={vender.picture} alt="img" width="180" />
+                  <p>${vender.price}</p>
+                  <p>Description:{vender.description}</p>
+                  <button onClick={deleteProduct} className='margin-market-b'>Delete</button>
               </div>
            </div>
+            )
+          })}
+            
         </div>
       
     </div>

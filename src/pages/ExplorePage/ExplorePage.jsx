@@ -12,11 +12,12 @@ const ExplorePage = () => {
   const [posts, setPosts] = useState([])
   // function para tener los posts del servidor
   // usando context provider para ver si esta log in
-  // const {isLoggedIn} = useContext(AuthContext);
+ const {isLoggedIn} = useContext(AuthContext);
 
   const getPosts = () => {
     axios.get(`${API_URL}/api/post`)
     .then((response) => {
+      console.log(response);
       setPosts(response.data)
     })
     .catch((err) => console.log(err));
@@ -26,17 +27,19 @@ const ExplorePage = () => {
   }, [])
   return (
     <div className='Explore-foto'>
-            <div className='Explore-row-left'>
-                 <Link  to="/events" className='Explore-Link-events'>Events</Link>
-                 <Link to="/marketplace" className='Explore-Link-marketplace'>Marketplace</Link>
-            </div>
+            {isLoggedIn && (
+              <div className='Explore-row-left'>
+              <Link  to="/events" className='Explore-Link-events'>Events</Link>
+              <Link to="/marketplace" className='Explore-Link-marketplace'>Marketplace</Link>
+             </div>
+            )}
+            
             <div className="Explore-feed">
             <div className='Explore-feedBck'>
                 <h2>Feed</h2>
                 {posts.map((post) => {
                   return <div>
-
-                          <h3>username:{post.name}</h3>
+                          <h3>username: {post.user.user}</h3>
                           <img src={post.picture} alt="img" width="100px"/>
                           <p>Description: {post.description}</p>
                           <br />
@@ -44,15 +47,16 @@ const ExplorePage = () => {
                              <p>Comments:</p>
                         </div>    
                   </div>
-                })} 
-                  
-                         
-                  </div>
-                     <div className='ExpoloeB'>
-                          <p>Dont Miss on the Action & Share your Moments</p>
-                          <Link to={"/signup"} className="Explore-L"> Sign Up</Link>
-                          <Link to={"/login"} className="Explore-L"> Log In</Link>
-                    </div>
+                })}                          
+                </div>
+                {!isLoggedIn && (
+                  <div className='ExpoloeB'>
+                  <p>Dont Miss on the Action & Share your Moments</p>
+                  <Link to={"/signup"} className="Explore-L"> Sign Up</Link>
+                  <Link to={"/login"} className="Explore-L"> Log In</Link>
+            </div>
+                )} 
+                     
              </div>
     </div>
   )

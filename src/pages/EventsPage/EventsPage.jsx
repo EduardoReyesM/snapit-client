@@ -6,10 +6,10 @@ const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
 
   const EventsPage = () => {
     //listas de events creados
-  const [events, setEvents] = useState();
+  const [events, setEvents] = useState([]);
   //function para tener los events del servidor
   const getEvents = () => {
-    axios.get(`${API_URL}/api/events`)
+    axios.get(`${API_URL}/api/event`)
       .then((response) => {
       setEvents(response.data)
     })
@@ -25,13 +25,20 @@ const API_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
           <a href='/newevent'><h6>Create New Event</h6></a>
         </div>
         <div className='events-box-elements'>
-              <div className='events-box-one'>
-                   <div>
-                      <img src="" alt="img" width="200" />
-                      <p>Description:</p>
-                      <button>Share</button>
-                   </div>
-              </div> 
+        <div className='events-box-one'>
+          {events.map(evento => {
+            return (
+            <div className='events-box-one'>
+               <div className='cada-evento'>
+                <img src={evento.picture} alt="img" width="140" />
+                 <p>Description:{evento.description}</p>
+                 <button>Delete</button> 
+                </div>          
+            </div> 
+            )
+          })}
+           </div> 
+              
         </div>
    </div>
   )

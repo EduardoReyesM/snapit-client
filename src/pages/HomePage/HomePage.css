@@ -1,16 +1,42 @@
 .Home-title {
+    color:gold;
     font-size: 4vh;
     background-image: url("../../images/empty.jpeg");
+    height: 93vh;
 }
 .Home-h1 {
     display: flex;
-    justify-content: center;  
+    justify-content: center; 
+    text-shadow: 5px 5px 5px black; 
 }
 
-.Home-images {
+.Home-images{
+    width: 250px;
+    height: 250px;
+    background: rgb(255, 254, 254);
+    box-shadow: 5px 10px 10px rgb(4, 216, 254);;
+    border-radius: 50%;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    gap: 16vw;
+    margin-left: 10vw;
+}
+.juan, .chu {
+    width: 250px;
+    height: 250px;
+    background: rgb(255, 255, 255);
+    box-shadow: 5px 10px 10px rgb(4, 216, 254);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+.imagen-perfil {
+    margin-left: 2px;
+    border-radius: 50%;
+}
+.imagen-perfil-echo{
+    margin-left: 2px;
+    border-radius: 50%;
 }
 
 .footer {
@@ -19,6 +45,11 @@
     background-color: white;
     color: black;
     border: 1px solid white;
-    display: flex;
-    justify-content: center;
+    margin-top: 38vh;
 }
+/* .leaf{ 
+    border-radius: 5px 300px 3px 300px;
+    background: #6DC75F;
+    width: 240px;
+    height: 150px;
+} */
